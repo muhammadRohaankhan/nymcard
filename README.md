@@ -8,12 +8,13 @@ Welcome to the **Nymcard** project! This project serves as a **Confluence Knowle
 2. [Backend Setup](#backend-setup)
    - [1. Clone the Repository](#1-clone-the-repository)
    - [2. Create a Virtual Environment](#2-create-a-virtual-environment)
-   - [3. Install Dependencies](#3-install-dependencies)
-   - [4. Configure Environment Variables](#4-configure-environment-variables)
-   - [5. Set Up Confluence Permissions](#5-set-up-confluence-permissions)
-   - [6. Data Ingestion](#6-data-ingestion)
-   - [7. Start the API Server](#7-start-the-api-server)
-   - [8. CLI-Based Testing](#8-cli-based-testing)
+   - [3. Activate the Virtual Environment](#3-activate-the-virtual-environment)
+   - [4. Install Dependencies](#4-install-dependencies)
+   - [5. Configure Environment Variables](#5-configure-environment-variables)
+   - [6. Set Up Confluence Permissions](#6-set-up-confluence-permissions)
+   - [7. Data Ingestion](#7-data-ingestion)
+   - [8. Start the API Server](#8-start-the-api-server)
+   - [9. CLI-Based Testing](#9-cli-based-testing)
 3. [Frontend Setup](#frontend-setup)
    - [1. Navigate to Frontend Directory](#1-navigate-to-frontend-directory)
    - [2. Install Dependencies](#2-install-dependencies)
@@ -31,7 +32,7 @@ Welcome to the **Nymcard** project! This project serves as a **Confluence Knowle
 
 Before setting up the project, ensure you have the following installed on your system:
 
-- **Python 3.9+**
+- **Python 3.8+**
 - **Node.js 14+** and **npm**
 - **Git**
 
@@ -78,7 +79,7 @@ Install the required Python packages using `requirements.txt`:
 
 ```bash
 pip install --upgrade pip
-pip install -r nymcard/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 5. Configure Environment Variables
@@ -90,13 +91,13 @@ Environment variables are crucial for configuring sensitive information like API
    The sample environment file is located at:
 
    ```
-   /home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/sample.env
+   ./sample.env
    ```
 
 2. **Copy and Rename the Sample File:**
 
    ```bash
-   cp /home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/sample.env /home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/.env
+   cp sample.env .env
    ```
 
 3. **Edit the `.env` File:**
@@ -104,7 +105,7 @@ Environment variables are crucial for configuring sensitive information like API
    Open the `.env` file in your preferred text editor and populate it with the correct keys:
 
    ```bash
-   nano /home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/.env
+   nano .env
    ```
 
    **Ensure the following variables are correctly set:**
@@ -116,13 +117,13 @@ Environment variables are crucial for configuring sensitive information like API
 
    OPENAI_API_KEY=your_openai_api_key
 
-   VECTORSTORE_DIRECTORY=/home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/chroma_db
+   VECTORSTORE_DIRECTORY=./chroma_db
    CONFLUENCE_SPACE_KEY=TD
    ```
 
    **Notes:**
 
-   - **Absolute Paths:** Use absolute paths for directories to avoid path resolution issues.
+   - **Relative Paths:** Use relative paths for directories to maintain portability.
    - **API Tokens:** Ensure that `CONFLUENCE_API_TOKEN` and `OPENAI_API_KEY` are valid and have the necessary permissions.
 
 ### 6. Set Up Confluence Permissions
@@ -150,7 +151,7 @@ Populate the vector store and registry with data from Confluence.
 1. **Navigate to the Backend Directory:**
 
    ```bash
-   cd /home/rohaan/Downloads/nymcard/nymcard_project/backend
+   cd /path/to/nymcard_project/backend
    ```
 
 2. **Run the Ingestion Command:**
@@ -162,7 +163,7 @@ Populate the vector store and registry with data from Confluence.
    **Expected Output:**
 
    ```
-   INFO:core.vectorstore_manager:[INIT_VECTORSTORE] Initializing VectorStore at /home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/chroma_db
+   INFO:core.vectorstore_manager:[INIT_VECTORSTORE] Initializing VectorStore at ./chroma_db
    INFO:core.vectorstore_manager:[INIT_VECTORSTORE] VectorStore initialized successfully.
    INFO:core.confluence_loader:[CONFLUENCE_LOADER] Loading pages from Confluence...
    INFO:core.doc_processor:[DOC_PROCESSOR] Processing page: "Project Aurora Overview"
@@ -176,7 +177,7 @@ Populate the vector store and registry with data from Confluence.
    - **Check `ingested_docs.json`:**
 
      ```bash
-     cat /home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/ingested_docs.json
+     cat ingested_docs.json
      ```
 
      **Expected Content:**
@@ -196,7 +197,7 @@ Populate the vector store and registry with data from Confluence.
    - **Check Vector Store Directory:**
 
      ```bash
-     ls /home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/chroma_db
+     ls chroma_db
      ```
 
      **Expected Output:**
@@ -216,7 +217,7 @@ Launch the backend API server to handle frontend requests.
 1. **Ensure You're in the Backend Directory and Virtual Environment is Active:**
 
    ```bash
-   cd /home/rohaan/Downloads/nymcard/nymcard_project/backend
+   cd /path/to/nymcard_project/backend
    source venv/bin/activate
    ```
 
@@ -278,7 +279,7 @@ The frontend provides a user-friendly interface for interacting with the Conflue
 ### 1. Navigate to Frontend Directory
 
 ```bash
-cd /home/rohaan/Downloads/nymcard/nymcard_project/frontend
+cd ../frontend
 ```
 
 ### 2. Install Dependencies
@@ -315,7 +316,7 @@ If you encounter issues during setup or while running the application, consider 
 
 2. **Environment Variables Not Loaded:**
 
-   - Confirm that the `.env` file is correctly named and placed in `/home/rohaan/Downloads/nymcard/nymcard_project/backend/nymcard/`.
+   - Confirm that the `.env` file is correctly named and placed in `./backend/nymcard/`.
    - Ensure that all required variables are set and have valid values.
 
 3. **Confluence Access Issues:**
@@ -390,10 +391,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [your.email@example.com](mailto:your.email@example.com)
+Rohaan Khan - [rohaank67@gmail.com](mailto:rohaank67@gmail.com)
 
-Project Link: [https://github.com/yourusername/nymcard_project](https://github.com/yourusername/nymcard_project)
-
----
-
-*Thank you for using Nymcard! We hope this tool enhances your productivity and streamlines your interactions with Confluence.*
+Project Link: [https://github.com/muhammadRohaankhan/nymcard_project](https://github.com/muhammadRohaankhan/nymcard_project)
