@@ -1,0 +1,287 @@
+# =========================================
+# Nymcard Project .gitignore
+# =========================================
+
+# -----------------------------------------
+# Global Exclusions
+# -----------------------------------------
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+
+# Logs
+*.log
+logs/
+*.out
+*.err
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Python virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env/
+.env.*
+
+# Node.js dependencies
+node_modules/
+frontend/node_modules/
+
+# Build directories
+frontend/build/
+backend/chroma_db/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+docs/build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# dotenv
+*.env
+
+# virtualenv
+venv/
+ENV/
+env/
+.env/
+.env.*
+
+# Spyder project settings
+.spyderproject
+.spyderworkspace
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# -----------------------------------------
+# Backend Specific Exclusions
+# -----------------------------------------
+
+# Backend environment variables
+backend/nymcard/.env
+
+# Backend data files
+backend/nymcard/data/*.json
+
+# Backend Python cache
+backend/nymcard/__pycache__/
+backend/nymcard/core/__pycache__/
+backend/nymcard/API/__pycache__/
+backend/nymcard/utils/__pycache__/
+backend/nymcard/*.pyc
+
+# -----------------------------------------
+# Frontend Specific Exclusions
+# -----------------------------------------
+
+# Frontend environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Frontend build artifacts
+frontend/build/
+frontend/dist/
+
+# Frontend dependency directories
+frontend/node_modules/
+
+# Frontend lock files
+frontend/package-lock.json
+frontend/yarn.lock
+
+# Frontend logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Frontend test coverage
+frontend/coverage/
+frontend/.nyc_output/
+
+# Frontend IDE specific files
+frontend/.vscode/
+frontend/.idea/
+frontend/.DS_Store
+
+# -----------------------------------------
+# IDEs and Editors Specific Exclusions
+# -----------------------------------------
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# -----------------------------------------
+# Miscellaneous Exclusions
+# -----------------------------------------
+
+# Ignore git directories in submodules
+**/.git
+
+# Ignore backup files created by editors
+*~
+
+# Ignore hidden system files
+.*.sw?
+
+# -----------------------------------------
+# Custom Exclusions
+# -----------------------------------------
+
+# Add any additional directories or files you want to exclude below
+# Example:
+# secrets/
+# private/
